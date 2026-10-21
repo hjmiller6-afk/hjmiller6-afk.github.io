@@ -1,0 +1,236 @@
+:root {
+  color-scheme: light;
+  --color-ink: #20372f;
+  --color-muted: #59665d;
+  --color-paper: #f4f0e6;
+  --color-surface: #fbf9f2;
+  --color-green: #294b3a;
+  --color-brass: #957747;
+  --color-line: #d8cdb7;
+  font-family: Baskerville, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 52%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 31px, rgba(76, 66, 45, 0.025) 32px);
+  color: var(--color-ink);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--color-green);
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  color: var(--color-brass);
+}
+
+.site-header {
+  width: min(100% - 3rem, 70rem);
+  min-height: 5.5rem;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 3px double var(--color-green);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.site-name {
+  color: var(--color-ink);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  padding-block: 0.35rem;
+  border-bottom: 1px solid transparent;
+  color: var(--color-muted);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a[aria-current="page"],
+nav a:hover {
+  border-bottom-color: var(--color-brass);
+  color: var(--color-green);
+}
+
+.page-content {
+  width: min(100% - 3rem, 70rem);
+  margin: auto;
+  padding-block: 5rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+  align-items: center;
+  gap: 5rem;
+  max-width: 59rem;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--color-brass);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 1.5rem;
+  color: var(--color-green);
+  font-size: 3.7rem;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.bio {
+  max-width: 38rem;
+  margin: 0 0 1.75rem;
+  color: var(--color-muted);
+  font-size: 1.12rem;
+  line-height: 1.85;
+}
+
+.resume-link {
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--color-brass);
+  color: var(--color-green);
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resume-link:hover {
+  border-bottom-color: var(--color-green);
+}
+
+.resume-link span {
+  padding-left: 0.35rem;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 7px solid var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-brass), 0 14px 32px rgba(32, 55, 47, 0.13);
+  object-fit: cover;
+  background: #e5e1d5;
+  color: var(--color-muted);
+}
+
+.portfolio-content {
+  max-width: 59rem;
+  min-height: 60vh;
+  margin-inline: auto;
+}
+
+.portfolio-content > p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 1.12rem;
+}
+
+.assignment-list {
+  min-height: 5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+  list-style: none;
+}
+
+.site-footer {
+  width: min(100% - 3rem, 70rem);
+  margin-inline: auto;
+  padding-block: 1rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .site-header,
+  .page-content,
+  .site-footer {
+    width: min(100% - 2rem, 70rem);
+  }
+
+  .site-header {
+    min-height: 4.75rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  .page-content {
+    padding-block: 3rem;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .profile-photo {
+    width: min(100%, 24rem);
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header,
+  .page-content,
+  .site-footer {
+    width: min(100% - 1.5rem, 70rem);
+  }
+
+  .site-name {
+    font-size: 1.15rem;
+  }
+
+  nav {
+    gap: 0.75rem;
+  }
+
+  nav a {
+    font-size: 0.7rem;
+  }
+}
